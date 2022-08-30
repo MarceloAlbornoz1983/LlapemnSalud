@@ -17,7 +17,6 @@ function validarContacto(enviar){
     var fono = $("#fono").val();
     var email = $("#email").val();
     var mensaje = $("#mensaje").val();
-    var asunto = $("#asunto").val();
 
     if (name == "") {
         //campoVacio = campoVacio+"Nombre<br>";
@@ -58,14 +57,6 @@ function validarContacto(enviar){
         
     }   
 
-    if (asunto == "") {
-        $("#asunto-error").html("<p>* Favor indiquenos el motivo de su mensaje</p>");
-    }
-
-    else{
-        $("#asunto-error").html("");
-        
-    }   
     //Validacion de formato de email
     if(isEmail(email) == false && email != ""){
         $("#email-error").html("<p>* Tu direccion de email no es válida, favor revisar y escribir correctamente</p>");
@@ -80,31 +71,6 @@ function validarContacto(enviar){
      
     return enviar;
 }
-
-/*$(document).ready(function(){
-
-        if ($("#asunto").val() == "Asunto*") {
-
-            $("#adjunto").css("display", "none");
-        }
-        else{
-             $("#adjunto").css("display", "block");
-          }
-    
-   });*/
-
-$(document).ready(function(){
-   
-    $("#asunto").change(function(){
-           if ($('select[id=asunto]').val() == "3") {
-
-            $("#adjunto").css("display", "block");
-        }
-        else{
-             $("#adjunto").css("display", "none");
-          }
-    });
-});
 
 $("#enviar").click(function() {
     if(validarContacto(enviar)){
